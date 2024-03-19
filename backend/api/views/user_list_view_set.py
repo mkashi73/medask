@@ -12,7 +12,7 @@ class UserListViewSet(mixins.ListModelMixin,
                       viewsets.GenericViewSet):
     permission_classes = (IsAuthenticated,)
     serializer_class = UserSerializer
-    queryset = User.objects.exclude(role__code_name='su').filter(profile_status='Current').order_by('appointment_order')
+    queryset = User.objects.exclude(role__code_name='su')
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = UserFilter
 

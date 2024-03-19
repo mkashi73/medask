@@ -39,22 +39,10 @@ class UserManager(BaseUserManager):
 class User(AbstractBaseUser):
     id = models.BigIntegerField(primary_key=True)
     username = models.CharField(max_length=255)
-    center = models.ForeignKey('Center', null=True, on_delete=models.SET_NULL, related_name='+')
     name = models.CharField(max_length=255, blank=True, null=True)
     profile_status = models.CharField(max_length=255, blank=True, null=True)
     telephone = models.CharField(max_length=255, blank=True, null=True)
-    svc_number = models.CharField(max_length=255, blank=True, null=True)
     is_delete = models.CharField(max_length=255, blank=True, null=True)
-    rank_name = models.CharField(max_length=255, blank=True, null=True)
-    service_name = models.CharField(max_length=255, blank=True, null=True)
-    rank_order = models.BigIntegerField(blank=True, null=True)
-    rank_id = models.BigIntegerField(blank=True, null=True)
-    appointment_id = models.BigIntegerField(blank=True, null=True)
-    appointment_name = models.CharField(max_length=255, blank=True, null=True)
-    appointment_order = models.BigIntegerField(blank=True, null=True)
-    executive_order = models.BigIntegerField(blank=True, null=True)
-    appointment_type = models.CharField(max_length=255, blank=True, null=True)
-    data_center_id = models.BigIntegerField(blank=True, null=True)
     profile_image = models.ImageField(max_length=255, upload_to=get_profile_image_path, null=True, blank=True,
                                       default=get_default_profile_image_path)
 

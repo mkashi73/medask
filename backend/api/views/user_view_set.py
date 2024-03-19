@@ -14,7 +14,7 @@ class UserViewSet(mixins.ListModelMixin,
                   mixins.RetrieveModelMixin,
                   mixins.UpdateModelMixin,
                   viewsets.GenericViewSet):
-    queryset = User.objects.exclude(role__code_name='su').order_by('appointment_order')
+    queryset = User.objects.exclude(role__code_name='su')
     serializer_class = UserSerializer
     permission_classes = (IsAuthenticated, )
     pagination_class = CustomPagination

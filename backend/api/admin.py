@@ -16,10 +16,6 @@ class RoleAdmin(ImportExportModelAdmin, admin.ModelAdmin):
 class PermissionAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display =[field.name for field in Permission._meta.fields]
 
-@admin.register(Document)
-class DocumentAdmin(ImportExportModelAdmin, admin.ModelAdmin):
-    list_display =[field.name for field in Document._meta.fields]
-    
 @admin.register(Logs)
 class LogsAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     list_display =[field.name for field in Logs._meta.fields]
