@@ -43,7 +43,7 @@ const router = new VueRouter({
         permission: "show_user",
       },
     },
-    
+
     {
       path: "/role",
       name: "Role",
@@ -62,8 +62,17 @@ const router = new VueRouter({
     },
 
     {
+      path: "/landingPage",
+      name: "LandingPage",
+      component: () => import("@/views/landingPage/LandingPage.vue"),
+      meta: {
+        layout: "full",
+      },
+    },
+
+    {
       path: "*",
-      redirect: "/login",
+      redirect: "/landingPage",
     },
   ],
 });
